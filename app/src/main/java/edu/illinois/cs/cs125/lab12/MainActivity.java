@@ -3,6 +3,8 @@ package edu.illinois.cs.cs125.lab12;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -37,10 +39,13 @@ public final class MainActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
 
         setContentView(R.layout.activity_main);
-
-        startAPICall();
+        final Button Refresh = findViewById(R.id.Refresh);
+        Refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                Log.d(TAG, "Refresh button hit");
+                startAPICall();
     }
-
     /**
      * Run when this activity is no longer visible.
      */
@@ -48,7 +53,6 @@ public final class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
     }
-
     /**
      * Make a call to the weather API.
      */

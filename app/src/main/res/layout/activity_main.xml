@@ -7,4 +7,9 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/Refresh"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Refresh" />
 </LinearLayout>
